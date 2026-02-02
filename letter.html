@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Janelle 💖 Be My Valentine?</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      color: white;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.55);
+      min-height: 100vh;
+      padding: 24px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.4em;
+      color: #ffd1dc;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 420px;
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+
+    .poem {
+      font-style: italic;
+      margin: 20px 0;
+      opacity: 0;
+      animation: fadeIn 2.5s ease forwards;
+      animation-delay: 1.5s;
+    }
+
+    .button {
+      margin-top: 25px;
+      background: #ff5c8d;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .button:hover {
+      background: #ff2e63;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.85em;
+      opacity: 0.85;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-110vh); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2023/02/14/audio_4b9c3f7b0f.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="overlay">
+    <h1>Hi Janelle 💕</h1>
+
+    <p>I’ve been wanting to ask you something special this Valentine’s Day.</p>
+
+    <div class="poem">
+      <p>
+        In a place filled with art and light,<br>
+        Coffee warm and moments right,<br>
+        I was hoping you’d say yes too,<br>
+        And spend February 14 with me and you.
+      </p>
+    </div>
+
+    <p>📍 <strong>Vivace Art Café</strong>, Cebu City</p>
+    <p>🗓️ <strong>February 14</strong></p>
+
+    <button class="button" onclick="sayYes()">Yes, I’d love to 💖</button>
+
+    <footer>
+      Made with courage and a hopeful heart 💌
+    </footer>
+  </div>
+
+  <script>
+    // ✍️ Your name is now added
+    const senderName = "— Vince Jelvin C. Alferez 💕";
+
+    const backgrounds = [
+      "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg",
+      "https://images.pexels.com/photos/2611815/pexels-photo-2611815.jpeg",
+      "https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg"
+    ];
+    document.body.style.backgroundImage =
+      `url(${backgrounds[Math.floor(Math.random() * backgrounds.length)]})`;
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 600);
+
+    function sayYes() {
+      alert(
+        "You just made my day 💕\n\n" +
+        "I can’t wait to spend Valentine’s Day with you at Vivace Art Café.\n" +
+        "Coffee, art, and us — see you on Feb 14 🥰\n\n" +
+        senderName
+      );
+    }
+  </script>
+
+</body>
+</html>
